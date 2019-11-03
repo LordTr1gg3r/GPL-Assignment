@@ -36,7 +36,9 @@ public class GPL
 				{ 
 				    "circle",
 				    "rectangle", 
-					"triangle",  
+					"triangle", 
+					"moveto",
+					"drawto",
 					"clear", 
 					"reset",
 				 };
@@ -61,7 +63,6 @@ public class GPL
 					   
 					   // Looks at what the user input and gets the code from the Text Field(Single line text area)
 					   String SingleCommand = SingleCode.TextFieldText.getText().toString().toLowerCase();//
-
 					   /* If the user input in text field is equal to run , it checks the code and runs the command, if incorrect send error.
 					     Sends the code to the error class to validate.
 					   */ 

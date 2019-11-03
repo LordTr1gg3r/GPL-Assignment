@@ -84,7 +84,7 @@ public class ImageArea  extends JPanel
     //Clears image
 	public void clear()
 	{
-		g.setColor(Color.BLUE);
+		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Width,Height);
 		g.setColor(Color.WHITE);
 		repaint();	
