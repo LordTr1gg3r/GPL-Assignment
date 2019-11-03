@@ -28,7 +28,16 @@ public class Commands
 		case "triangle":
 			Code = new Triangle("triangle", 3, PictureBox);
 			break;
-		
+			
+			// DrawTo
+					case "drawto":
+						Code = new DrawToImage("drawto", 2, PictureBox);
+						break;
+
+					// MoveTo
+					case "moveto":
+						Code = new MoveToImage("moveto", 2, PictureBox);
+						break;
 
 		// Clear
 		case "clear":
