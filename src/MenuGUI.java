@@ -1,15 +1,21 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-import javax.swing.*;
-
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 
 class MenuGUI extends JFrame {
@@ -41,9 +47,9 @@ class MenuGUI extends JFrame {
     public MenuGUI() throws IOException {
         //... Add listeners to menu items
         m_openItem.addActionListener(new OpenAction());
-        m_newItem.addActionListener(new NewAction());
+        //m_newItem.addActionListener(new NewAction());
         m_aboutItem.addActionListener(new AboutAction());
-        m_saveItem.addActionListener(new SaveAction());
+        //m_saveItem.addActionListener(new SaveAction());
         m_quitItem.addActionListener(new ExitAction());
 
         
@@ -68,156 +74,7 @@ class MenuGUI extends JFrame {
                 // Main Pane
                 JPanel panel = new JPanel();                
                 panel.setLayout(new BorderLayout(0,0));
-                
-              //Left Text Pane
-        		JTextArea text = new JTextArea(10,40);
-        		text.setLayout(null);
-        		text.setSize(32, 128);
-        		text.setPreferredSize(new Dimension (10,40));	
-        		text.setForeground(Color.white);
-        		text.setBorder(BorderFactory.createLoweredBevelBorder());
-        		text.setBorder(BorderFactory.createTitledBorder(null, "Commands", WIDTH, HEIGHT, getFont(), Color.white));
-        		text.setBackground(Color.DARK_GRAY);
-        	    panel.add(text, BorderLayout.LINE_START);
 
-              //Right Graphic Pane
-        		GraphicsPanel gp = new GraphicsPanel();
-        		panel.add(gp,  BorderLayout.CENTER);
-        	    
-        	    
-        		Point penPoint = new Point(10,5);
-        		shouldDraw = false;
-        	    direction = Direction.RIGHT;
-        	    setColour = Color.WHITE;
-        		
-        	    JButton button = new JButton("Click Here to Draw");
-        	    button.setPreferredSize(new Dimension(30, 40));
-        	    button.addActionListener(new ActionListener() 
-        	    {
-        	    	@Override
-        			public void actionPerformed(ActionEvent e) {
-        	    	//stuff
-    				String inputStr = text.getText();
-    				
-    				String[] cmds = inputStr.split(" ");
-    				
-    				Object g = null;
-					switch(cmds[0].toLowerCase()) {
-    					case "penup":
-    						shouldDraw = false;
-    						break;
-    					
-    					case "pendown":
-    						shouldDraw = true;
-    						break;
-    					
-    					case "turnright":
-    					case "turnleft":
-    						if(cmds[0].equalsIgnoreCase("turnright"))
-    							direction =
-    									direction == Direction.UP ? Direction.RIGHT :
-    											direction == Direction.RIGHT ? Direction.DOWN :
-    													direction == Direction.DOWN ? Direction.LEFT :
-    															Direction.UP;
-    						else
-    							direction =
-    								direction == Direction.UP ? Direction.LEFT :
-    										direction == Direction.LEFT ? Direction.DOWN :
-    												direction == Direction.DOWN ? Direction.RIGHT :
-    														Direction.UP;
-    						break;
-    					case "square":
-    						// center of the 
-    				        int cx, cy; 
-    				  
-    				        // center of th ellipse 
-    				        cx = 150; 
-    				        cy = 175; 
-    						for (int i = 0; i <= 360; i++) { 
-    				            double x, y; 
-    				            double A = 75, B = 50, px = 0, py = 0; 
-								x = A * Math.sin(Math.toRadians(i)); 
-    				            y = B * Math.cos(Math.toRadians(i)); 
-    				  
-    				            if (i != 0) { 
-    				                // draw a line joining previous and new point . 
-    				                ((Graphics) g).drawLine((int)px + cx, (int)py + cy, 
-    				                                (int)x + cx, (int)y + cy); 
-    				            } 
-    				  
-    				            // store the previous points 
-    				            px = x; 
-    				            py = y; }
-    						break;
-    					
-    					case "backward":
-    					case "forward":
-    						//Make sure 0its forward <distance>
-    						if (cmds.length != 2)
-    							return;
-    						
-    						int distance = Integer.parseInt(cmds[1]);
-    						
-    						Point oldPosition = new Point(penPoint.x, penPoint.y);
-    						
-    						//Moves from current location
-    						
-    						if(cmds[0].equalsIgnoreCase("backward")) {
-    							penPoint.setLocation(
-    									penPoint.getX() + (direction == Direction.RIGHT ? -distance : direction == Direction.LEFT ? distance : 0),
-    									penPoint.getY() + (direction == Direction.DOWN ? -distance : direction == Direction.UP ? distance : 0)
-    							);
-    						} else {
-    							penPoint.setLocation(
-    									penPoint.getX() + (direction == Direction.RIGHT ? distance : direction == Direction.LEFT ? -distance : 0),
-    									penPoint.getY() + (direction == Direction.DOWN ? distance : direction == Direction.UP ? -distance : 0)
-    							);
-    						}
-    						
-    				
-    						//Draws the pen or what ever c;
-    						if(shouldDraw) {
-    							gp.drawLine(setColour, oldPosition.x, oldPosition.y, penPoint.x, penPoint.y);
-    							gp.repaint();
-    						}
-    						break;
-    					//Colour of Pen	
-    					case "red":
-    					case "blue":
-    					case "black":
-    					case "white":
-    					case "green":	
-    						setColour = cmds[0].equalsIgnoreCase("red") ? Color.red :
-    									cmds[0].equalsIgnoreCase("black") ? Color.black :
-    									cmds[0].equalsIgnoreCase("white") ? Color.white :
-    									cmds[0].equalsIgnoreCase("blue") ? Color.blue :
-    												Color.green;
-    						
-    						break;
-    					
-    						
-    					case "reset":
-    						gp.clear();
-    						gp.repaint();
-    						break;
-    						
-    					default:
-    						JOptionPane.showMessageDialog(null, "Invalid command!");
-    					
-    				}
-    				
-    				text.setText("");
-    			}
-    		});
-    	    
-    	    panel.add(button, BorderLayout.PAGE_END);
-    		//look at turtule java// draw button //actionlsit
-               
-        	    
-        	    
-        	    
-        	    
-        	    
         		
  //... Set JFrame's menubar, content pane, and title.
  this.setContentPane(panel);       // Set windows content pane..
@@ -227,6 +84,18 @@ class MenuGUI extends JFrame {
  this.setTitle("Assignment");
  //getContentPane().setBackground(Color.DARK_GRAY);
     }	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public enum Direction 
 	   {
 	    	UP,		//0

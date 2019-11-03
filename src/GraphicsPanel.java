@@ -20,8 +20,8 @@ public class GraphicsPanel extends JPanel {
 	 * Constructor.
 	 */
 	public GraphicsPanel() {
-		setPreferredSize(new Dimension(200, 200));
-		image = new BufferedImage(1450, 700, BufferedImage.TYPE_INT_RGB);
+		setPreferredSize(new Dimension(500, 500));
+		image = new BufferedImage(950, 700, BufferedImage.TYPE_INT_RGB);
 		
 		
 		// Set max size of the panel, so that is matches the max size of the image.
