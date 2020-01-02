@@ -40,7 +40,7 @@ public class Error
 
 		if (BlankLines.size() == 0) 
 		{
-			JOptionPane.showMessageDialog(frame, "You have not entered any commands, please enter and try again ");
+			JOptionPane.showMessageDialog(frame, "Please enter a command");
 			return false;
 		}
 
@@ -89,14 +89,14 @@ public class Error
 				}
 			}
 		}
-		  JOptionPane.showMessageDialog(frame, "You have entered the incorrect command, please try again");
+		  JOptionPane.showMessageDialog(frame, "Command is incorrect, please try again");
 		  return false;
 	}
 	
 	private boolean CheckParamaters(int D, String[] Check)
 	{
 				
-		// this checks to see if the parameter and interger if not send error.
+		// this checks to see if the parameter and int are there and if not send error.
 		for (int E = 1; E <= D; E++) 
 		{
 			try 
@@ -104,7 +104,7 @@ public class Error
 				Integer.parseInt(Check[E]);
 			} catch (Exception e) 
 			{
-				JOptionPane.showMessageDialog(frame, "The parmater should be an integer, please try again eg circle 100");
+				JOptionPane.showMessageDialog(frame, "The value you entered is incorrect, please try again eg rectangle 100 10 100");
 				return false;
 			}
 		}

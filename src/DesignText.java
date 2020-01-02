@@ -25,7 +25,7 @@ public class DesignText extends JPanel
 		TextAreaText.setBackground(Color.white);
 		TextAreaText.setPreferredSize(new Dimension(500,500));
 		setLayout(new GridLayout(1,0,0,0));
-		setBorder(BorderFactory.createTitledBorder("Multi-Line Text Area"));
+		setBorder(BorderFactory.createTitledBorder("Multi Line Commands"));
 	
 		CodeInput = new DesignField();
 		

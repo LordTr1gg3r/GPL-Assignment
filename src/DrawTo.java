@@ -1,7 +1,12 @@
 
-public class DrawToImage extends Code
+public class DrawTo extends Code
 {
-	public DrawToImage(String syntax, int paramsnumber, ImageArea canvas) 
+	/**
+	 * @param syntax
+	 * @param paramsnumber
+	 * @param canvas
+	 */
+	public DrawTo(String syntax, int paramsnumber, ImageArea canvas) 
 	{
 		setName(syntax);
 		setNumOfParams(paramsnumber);

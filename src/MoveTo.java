@@ -1,7 +1,7 @@
 
-public class MoveToImage  extends Code
+public class MoveTo  extends Code
 {
-	public MoveToImage (String syntax, int paramsnumber, ImageArea canvas) 
+	public MoveTo (String syntax, int paramsnumber, ImageArea canvas) 
 	{
 		setName(syntax);
 		setNumOfParams(paramsnumber);

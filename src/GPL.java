@@ -4,11 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-
-
-//main
+/**
+ * Main Runnable Class
+ * JFrame windows designs are established in this class
+ * @author Simon Thow 
+ * @param args
+ */
 public class GPL
 {		
 	public static void main(String[] args) 
@@ -23,7 +27,8 @@ public class GPL
 			DesignText ProgramCode = new DesignText();
 			DesignField SingleCode = ProgramCode.CodeInput;
 			ImageArea Image = new ImageArea(2000,800);
-			window.add(ProgramCode, BorderLayout.CENTER);
+			window.add(new JLabel("Commands/n Circle "), BorderLayout.EAST);
+			window.add(ProgramCode, BorderLayout.WEST);
 			window.add(SingleCode , BorderLayout.NORTH);
 			window.add(Image, BorderLayout.SOUTH);
 			window.setVisible(true);
@@ -46,7 +51,7 @@ public class GPL
 			// Create the factory for all the commands 
 			Commands Factory = new Commands(Image);
 			
-			// This create an ArrayList to hold all the command objects
+			// This creates an ArrayList to hold all the command objects
 			ArrayList<Code> CodeInput = new ArrayList<Code>();
 			for (String Codes : UserInput) 
 				{
@@ -58,24 +63,29 @@ public class GPL
 			    {
 					public void actionPerformed(ActionEvent e) 
 					{
-					   // Looks at what the user input and gets the code from the Text Area(Program area)
+					   /*
+					    * Checks the user's input in the TextArea and take's it for later verification.
+					    */
 					   String TextAreaCode = ProgramCode.TextAreaText.getText().toLowerCase();
-					   
+					   /*
+					    *  Checks the user's input in the TextFieldText and take's it for later verification.
+					    */
 					   // Looks at what the user input and gets the code from the Text Field(Single line text area)
 					   String SingleCommand = SingleCode.TextFieldText.getText().toString().toLowerCase();//
-					   /* If the user input in text field is equal to run , it checks the code and runs the command, if incorrect send error.
-					     Sends the code to the error class to validate.
-					   */ 
+					   /* 
+					    * Checks the user input is equal to run, checks the code and then runs the command. If incorrect then sends error which then code sent
+					    * to error class for verification.
+					    */ 
 					   if (SingleCommand.contentEquals("run")) 
 						  {
 							Boolean Valid = ErrorChecker.CorrectCode(TextAreaCode, CodeInput, CodeError.TextAreaText);
 							if (Valid) 
 								{
-								  JOptionPane.showMessageDialog(window, "The command has been entered");
+								  JOptionPane.showMessageDialog(window, "Command Accepted");
 								} 
 								else 
 								{
-								  JOptionPane.showMessageDialog(window, "Sorry the command is incorrect , please try agian");
+								  JOptionPane.showMessageDialog(window, "Sorry this command is incorrect , please try agian");
 								}
 						   } 
 						else 
@@ -83,11 +93,11 @@ public class GPL
 							 Boolean Valid = ErrorChecker.CorrectCode(SingleCommand, CodeInput, CodeError.TextAreaText);
 								if (Valid) 
 								{
-								  JOptionPane.showMessageDialog(window, "The command has been entered");
+								  JOptionPane.showMessageDialog(window, "Command Accepted");
 								}
 								else 
 								{
-								  JOptionPane.showMessageDialog(window, "Sorry the command is incorrect , please try agian");
+								  JOptionPane.showMessageDialog(window, "Sorry this command is incorrect , please try agian");
 								}
 							}
 					}

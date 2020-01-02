@@ -1,3 +1,9 @@
+/*
+ * Inheritance Circle Class from Code Class
+ * Uses array to draw circle 
+ */
+
+
 public class Circle extends Code
 {
 	public Circle(String syntax, int paramsnumber, ImageArea canvas) 
