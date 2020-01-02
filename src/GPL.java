@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * Main Runnable Class
  * JFrame windows designs are established in this class
  * @author Simon Thow 
- * @param args
+ * @param args 
  */
 public class GPL
 {		
@@ -27,8 +27,8 @@ public class GPL
 			DesignText ProgramCode = new DesignText();
 			DesignField SingleCode = ProgramCode.CodeInput;
 			ImageArea Image = new ImageArea(2000,800);
-			window.add(new JLabel("Commands/n Circle "), BorderLayout.EAST);
-			window.add(ProgramCode, BorderLayout.WEST);
+			window.add(new JLabel("Commands "), BorderLayout.EAST);
+			window.add(ProgramCode, BorderLayout.CENTER);
 			window.add(SingleCode , BorderLayout.NORTH);
 			window.add(Image, BorderLayout.SOUTH);
 			window.setVisible(true);
@@ -48,14 +48,18 @@ public class GPL
 					"reset",
 				 };
 
-			// Create the factory for all the commands 
-			Commands Factory = new Commands(Image);
+			/*
+			 * Create the cmds variable for all the commands 
+			 */
+			Commands cmds = new Commands(Image);
 			
-			// This creates an ArrayList to hold all the command objects
+			/*
+			 * This creates an ArrayList to hold all the command objects
+			 */
 			ArrayList<Code> CodeInput = new ArrayList<Code>();
 			for (String Codes : UserInput) 
 				{
-				  Code Object = Factory.GetCommand(Codes);
+				  Code Object = cmds.GetCommand(Codes);
 				  CodeInput.add(Object);
 				}
 				

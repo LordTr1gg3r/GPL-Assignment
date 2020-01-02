@@ -4,6 +4,10 @@
  */
 
 
+/**
+ * @author simon
+ *
+ */
 public class Circle extends Code
 {
 	public Circle(String syntax, int paramsnumber, ImageArea canvas) 
