@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /** Code Class were commands are verfied 
  * 
  * @author 33485434
@@ -6,9 +8,7 @@
 //command class
 public abstract class Code {
 	
-	public  void Runcommand(String[] array) {
-		System.out.println("run");
-	}
+	abstract public  void Runcommand(ArrayList<String> array);
 	
 	private String name = "";
 	private int numOfParams = 0;
@@ -31,11 +31,12 @@ public abstract class Code {
 	public int getNumOfParams() {
 		return numOfParams;
 	}
-
 	public void setNumOfParams(int numOfParams) {
 		this.numOfParams = numOfParams;
 	}
-
+	protected abstract void Runcommand(String[] array);
+	
+	
 
 	
 	

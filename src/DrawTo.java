@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**Class inherits from code and DrawTo as integer, String and ImageArea variables
   *
   *
@@ -16,5 +18,11 @@ public class DrawTo extends Code
 	public void Runcommand(String[] array) 
 	{
 		canvas.drawto(Integer.parseInt(array[1]), Integer.parseInt(array[2]));
+	}
+
+	@Override
+	public void Runcommand(ArrayList<String> array) {
+		// TODO Auto-generated method stub
+		
 	}
 }

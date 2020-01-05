@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class ResetImage extends Code
 {
@@ -11,5 +12,11 @@ public class ResetImage extends Code
 	public void Runcommand(String[] array)
 	{
 		canvas.ResetCoordinate();
+	}
+
+	@Override
+	public void Runcommand(ArrayList<String> array) {
+		// TODO Auto-generated method stub
+		
 	}
 }

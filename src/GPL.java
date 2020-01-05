@@ -42,8 +42,10 @@ public class GPL
 					"triangle", 
 					"moveto",
 					"drawto",
+					"drawrect",
 					"clear", 
 					"reset",
+					"randomcolor",
 				 };
 
 			/*

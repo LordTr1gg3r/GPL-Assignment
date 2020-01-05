@@ -27,6 +27,10 @@ public class Commands
 			Code = new Circle("circle", 1, PictureBox);
 			break;
 			
+		case "randomcolor":
+			Code = Color.getInstance("randomcolor", 0, PictureBox);
+			break;
+			
         // Rectangle
 		case "rectangle":
 			Code = new Rectangle("rectangle", 2, PictureBox);

@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.swing.JPanel;
 /**ImageArea were graphic's panel is created and stored
@@ -36,7 +37,7 @@ public class ImageArea  extends JPanel
 		Drawing = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
 		g = Drawing.getGraphics();
 		g.setColor(Color.black);
-		g.fillRect(0, 0, width, height);
+		g.fillRect(0, 0, width, height);	
 		g.setColor(Color.WHITE);
 	}
 	// Draw rectangle
@@ -44,6 +45,32 @@ public class ImageArea  extends JPanel
 	{
 		g.fillRect(CoordinateX, CoordinateY, width, height);
 		repaint();
+	}
+	
+public void color(){
+		
+		Random r = new Random();
+		int rcolor = r.nextInt(7);
+		
+		switch (rcolor) {
+		
+		case 0: g.setColor(Color.blue);
+			break;
+		case 1: g.setColor(Color.red);
+		    break;
+		case 2: g.setColor(Color.PINK);
+		  break;
+		case 3: g.setColor(Color.YELLOW);
+		break;
+		case 4: g.setColor(Color.MAGENTA);
+		break;
+		case 5: g.setColor(Color.ORANGE);
+		break;
+		case 6: g.setColor(Color.WHITE);
+		break;
+
+		
+		}
 	}
 	
 	public void drawrect(int width, int height)
@@ -59,13 +86,13 @@ public class ImageArea  extends JPanel
 		repaint();
 	}
 	//Draw Triangle 
-	public void triangle(int base, int A, int B) 
+	public void triangle(int base, int adj, int hyp) 
 	{
 		
-		//int[] CoordinatePointsX = {CoordinateX};
-		//int[] CoordinatePointsY = {CoordinateY};
-		//int CoordinatePointsZ = (CoordinateZ);
-		//g.fillPolygon(CoordinatePointsX, CoordinatePointsY, CoordinatePointsZ);
+		g.drawLine(CoordinateX, CoordinateY, (CoordinateX+base), CoordinateY);
+		g.drawLine((CoordinateX+base), CoordinateY, (CoordinateX+base), (CoordinateY+hyp));
+		g.drawLine((CoordinateX+base), (CoordinateY+hyp), CoordinateX, CoordinateY);
+		repaint();
 	}
 	
 	//Draws to coordinate 
