@@ -1,4 +1,7 @@
-
+/**MoveTo Class 
+  *@author 33485434
+  *
+  */
 public class MoveTo  extends Code
 {
 	public MoveTo (String syntax, int paramsnumber, ImageArea canvas) 

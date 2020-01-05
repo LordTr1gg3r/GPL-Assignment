@@ -2,7 +2,11 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
-
+/**Error Checking Class. Checks user input for correct parameters 
+ *
+ *@author 33485434
+ *
+ */
 
 
 public class Error  

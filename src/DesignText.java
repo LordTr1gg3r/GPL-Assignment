@@ -4,9 +4,10 @@ import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-
-
-//code panel
+/**DesignText inherits JPanel were Mutli line commands design is chosen in this class 
+ * @author 33485434
+ * 
+ */
 public class DesignText extends JPanel
 {
 	/**

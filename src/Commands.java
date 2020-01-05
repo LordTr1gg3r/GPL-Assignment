@@ -1,28 +1,24 @@
+/**
+  *This is the commands that are used within the program to get desired shape.
+  *Uses Switch statement
+  *Commands are Circle, Rectangle, Triangle, MoveTo, DrawTo, Clear and reset 
+  *
+  *@author 33485434
+  *
+  */
 public class Commands
 {
 	Code Code;
 	ImageArea PictureBox;
-	
-	/**
-	 * @param DrawArea
-	 */
 	public Commands(ImageArea DrawArea) 
 	{
 		// TODO Auto-generated constructor stub
 		PictureBox = DrawArea;
 	}
 	
-	/**
-	 * @param Shape
-	 * @return
-	 */
+	
 	public Code GetCommand(String Shape) 
 	{
-		/*
-		 *This is the commands that are used within the program to get desired shape.
-		 *Uses Switch statement
-		 *Commands are Circle, Rectangle, Triangle, MoveTo, DrawTo, Clear and reset 
-		 */
 		switch (Shape) 
 		{
 
@@ -66,5 +62,6 @@ public class Commands
 
 		return Code;
 	}
+	
 
 }

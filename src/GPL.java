@@ -10,8 +10,7 @@ import javax.swing.JOptionPane;
 /**
  * Main Runnable Class
  * JFrame windows designs are established in this class
- * @author Simon Thow 
- * @param args 
+ * @author 33485434 
  */
 public class GPL
 {		
@@ -26,11 +25,11 @@ public class GPL
 			window.setLayout(new BorderLayout());
 			DesignText ProgramCode = new DesignText();
 			DesignField SingleCode = ProgramCode.CodeInput;
-			ImageArea Image = new ImageArea(2000,800);
-			window.add(new JLabel("Commands "), BorderLayout.EAST);
-			window.add(ProgramCode, BorderLayout.CENTER);
+			ImageArea Image = new ImageArea(2000,900);
+			window.add(ProgramCode, BorderLayout.WEST);
 			window.add(SingleCode , BorderLayout.NORTH);
-			window.add(Image, BorderLayout.SOUTH);
+			window.add(Image, BorderLayout.EAST);
+			window.add(new JLabel("Commands "), BorderLayout.SOUTH);
 			window.setVisible(true);
 			
 			Error ErrorChecker = new Error();
@@ -67,16 +66,16 @@ public class GPL
 			    {
 					public void actionPerformed(ActionEvent e) 
 					{
-					   /*
+					   /**
 					    * Checks the user's input in the TextArea and take's it for later verification.
 					    */
 					   String TextAreaCode = ProgramCode.TextAreaText.getText().toLowerCase();
-					   /*
+					   /**
 					    *  Checks the user's input in the TextFieldText and take's it for later verification.
 					    */
 					   // Looks at what the user input and gets the code from the Text Field(Single line text area)
 					   String SingleCommand = SingleCode.TextFieldText.getText().toString().toLowerCase();//
-					   /* 
+					   /**
 					    * Checks the user input is equal to run, checks the code and then runs the command. If incorrect then sends error which then code sent
 					    * to error class for verification.
 					    */ 

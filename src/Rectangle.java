@@ -1,4 +1,8 @@
-
+/**Rectangle Class that extends from code. 
+  *
+  *@author 33485434
+  *
+  */
 public class Rectangle extends Code
 {
 	public Rectangle(String syntax, int paramsnumber, ImageArea canvas)

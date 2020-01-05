@@ -1,10 +1,14 @@
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
-
+/**ImageArea were graphic's panel is created and stored
+ *@author 33485434
+ *
+ */
 public class ImageArea  extends JPanel
 {
 	/**

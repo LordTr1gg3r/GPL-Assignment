@@ -1,4 +1,8 @@
-
+/** Code Class were commands are verfied 
+ * 
+ * @author 33485434
+ *
+ */
 //command class
 public abstract class Code {
 	

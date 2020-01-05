@@ -1,4 +1,8 @@
-
+/**Extends Triangle Class from Code Class. Uses array to draw Triangle
+ * 
+ * @author 33485434
+ *
+ */
 public class Triangle extends Code 
 {
 

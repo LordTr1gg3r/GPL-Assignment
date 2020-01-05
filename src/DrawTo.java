@@ -1,11 +1,11 @@
-
+/**Class inherits from code and DrawTo as integer, String and ImageArea variables
+  *
+  *
+  *@author 33485434
+  *
+  */
 public class DrawTo extends Code
 {
-	/**
-	 * @param syntax
-	 * @param paramsnumber
-	 * @param canvas
-	 */
 	public DrawTo(String syntax, int paramsnumber, ImageArea canvas) 
 	{
 		setName(syntax);

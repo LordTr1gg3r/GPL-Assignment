@@ -3,12 +3,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
+/**Represent the DesignField for JPanel 
+ * @author 33485434
+ */
 public class DesignField extends JPanel
 {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	public JTextField TextFieldText;
