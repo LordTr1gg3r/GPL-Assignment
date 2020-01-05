@@ -32,10 +32,15 @@ public class Commands
 			Code = new Rectangle("rectangle", 2, PictureBox);
 			break;
 			
+		// Draw Rectangle
+		case "drawrect":
+			Code = new DrawRect("rectangle", 2, PictureBox);
+		    break;
 		// Triangle
 		case "triangle":
 			Code = new Triangle("triangle", 3, PictureBox);
 			break;
+			
 		// DrawTo
 		case "drawto":
 			Code = new DrawTo("drawto", 2, PictureBox);

@@ -37,13 +37,18 @@ public class ImageArea  extends JPanel
 		g = Drawing.getGraphics();
 		g.setColor(Color.black);
 		g.fillRect(0, 0, width, height);
-		g.setColor(Color.WHITE);	
+		g.setColor(Color.WHITE);
 	}
-	
 	// Draw rectangle
 	public void rectangle(int width, int height) 
 	{
 		g.fillRect(CoordinateX, CoordinateY, width, height);
+		repaint();
+	}
+	
+	public void drawrect(int width, int height)
+	{
+		g.drawRect(CoordinateX, CoordinateY, width, height);
 		repaint();
 	}
 	
@@ -53,7 +58,6 @@ public class ImageArea  extends JPanel
 		g.fillOval(CoordinateX, CoordinateY, (radius*2), (radius*2));
 		repaint();
 	}
-	
 	//Draw Triangle 
 	public void triangle(int base, int A, int B) 
 	{

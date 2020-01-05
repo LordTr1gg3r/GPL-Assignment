@@ -25,11 +25,10 @@ public class GPL
 			window.setLayout(new BorderLayout());
 			DesignText ProgramCode = new DesignText();
 			DesignField SingleCode = ProgramCode.CodeInput;
-			ImageArea Image = new ImageArea(2000,900);
+			ImageArea Image = new ImageArea(2000,1000);
 			window.add(ProgramCode, BorderLayout.WEST);
 			window.add(SingleCode , BorderLayout.NORTH);
-			window.add(Image, BorderLayout.EAST);
-			window.add(new JLabel("Commands "), BorderLayout.SOUTH);
+			window.add(Image, BorderLayout.CENTER);
 			window.setVisible(true);
 			
 			Error ErrorChecker = new Error();
