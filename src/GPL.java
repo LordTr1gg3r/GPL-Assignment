@@ -43,9 +43,10 @@ public class GPL
 					"moveto",
 					"drawto",
 					"drawrect",
+					"drawcircle",
 					"clear", 
 					"reset",
-					"randomcolor",
+					"color",
 				 };
 
 			/*

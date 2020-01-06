@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-/**Rectangle Class that extends from code. 
+/**Draw Rectangle Class that extends from code. 
   *
   *@author 33485434
   *

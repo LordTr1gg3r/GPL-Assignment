@@ -7,11 +7,7 @@ import java.util.ArrayList;
  */
 public class Clear extends  Code 
 {
-	/**
-	 * @param syntax
-	 * @param paramsnumber
-	 * @param canvas
-	 */
+
 	public Clear(String syntax, int paramsnumber, ImageArea canvas) 
 	{
 		setName(syntax);

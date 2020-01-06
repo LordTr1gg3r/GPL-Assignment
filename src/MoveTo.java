@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-/**MoveTo Class 
+/**MoveTo location Class
   *@author 33485434
   *
   */

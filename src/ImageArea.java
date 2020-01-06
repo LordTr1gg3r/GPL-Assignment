@@ -33,32 +33,38 @@ public class ImageArea  extends JPanel
 		setPreferredSize(new Dimension(Width,Height));
 		setBackground(new Color(100,100,100));//220
 	
-		//create a buffered image
+		/**Creates Buffered Image
+		 * Creates Drawing space for Graphics 
+		 */
 		Drawing = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
 		g = Drawing.getGraphics();
 		g.setColor(Color.black);
 		g.fillRect(0, 0, width, height);	
 		g.setColor(Color.WHITE);
 	}
-	// Draw rectangle
+	/**Rectangle
+	 * This method is the rectangle shape with int values for width and height  
+	 */
 	public void rectangle(int width, int height) 
 	{
 		g.fillRect(CoordinateX, CoordinateY, width, height);
 		repaint();
 	}
-	
-public void color(){
+	/**Color of Pen
+	 * This method change's the colour of the pen when user ask's for the color to be changed 
+	 */
+	public void color(){
 		
 		Random r = new Random();
 		int rcolor = r.nextInt(7);
 		
 		switch (rcolor) {
 		
-		case 0: g.setColor(Color.blue);
+		case 0: g.setColor(Color.GREEN);
 			break;
-		case 1: g.setColor(Color.red);
+		case 1: g.setColor(Color.PINK);
 		    break;
-		case 2: g.setColor(Color.PINK);
+		case 2: g.setColor(Color.RED);
 		  break;
 		case 3: g.setColor(Color.YELLOW);
 		break;
@@ -78,31 +84,42 @@ public void color(){
 		g.drawRect(CoordinateX, CoordinateY, width, height);
 		repaint();
 	}
+	public void drawcircle(int radius)
+	{
+		g.drawOval(CoordinateX, CoordinateY, (radius*2), (radius*2));
+		repaint();
+	}
 	
-	//Draw circle
+	/**Circle 
+	 * Draws circle using the radius integer
+	 */
 	public void circle(int radius) 
 	{
 		g.fillOval(CoordinateX, CoordinateY, (radius*2), (radius*2));
 		repaint();
 	}
 	//Draw Triangle 
-	public void triangle(int base, int adj, int hyp) 
+	public void triangle(int bottoms, int side, int hyp) 
 	{
 		
-		g.drawLine(CoordinateX, CoordinateY, (CoordinateX+base), CoordinateY);
-		g.drawLine((CoordinateX+base), CoordinateY, (CoordinateX+base), (CoordinateY+hyp));
-		g.drawLine((CoordinateX+base), (CoordinateY+hyp), CoordinateX, CoordinateY);
+		g.drawLine(CoordinateX, CoordinateY, (CoordinateX+bottoms), CoordinateY);
+		g.drawLine((CoordinateX+bottoms), CoordinateY, (CoordinateX+bottoms), (CoordinateY+hyp));
+		g.drawLine((CoordinateX+bottoms), (CoordinateY+hyp), CoordinateX, CoordinateY);
 		repaint();
 	}
 	
-	//Draws to coordinate 
+	/**Draws to a user specified zone 
+	 *
+	 */
 	public void drawto(int X , int Y) 
 	{
 		g.drawLine(CoordinateX, CoordinateY, (CoordinateX + X), (CoordinateY + Y));
 		repaint();
 	}
 	
-	// Moves coordinate
+	/**Moves to a user specified zone
+	 *  
+	 */
 	public void moveto(int X, int Y) 
 	{
 		CoordinateX = X;

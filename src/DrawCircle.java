@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-/**Extends Circle Class from Code Class. Uses array to fill circle 
+/**Extends Draw Circle Class from Code Class. Uses array to draw circle 
  * @author 33485434
  * 
  */
 
-public class Circle extends Code
+public class DrawCircle extends Code
 {
-	public Circle(String syntax, int paramsnumber, ImageArea canvas) 
+	public DrawCircle(String syntax, int paramsnumber, ImageArea canvas) 
 	{
 		setName(syntax);
 		setNumOfParams(paramsnumber);
@@ -16,7 +16,7 @@ public class Circle extends Code
 	
     public void Runcommand(String[] array)
     {	
-		canvas.circle(Integer.parseInt(array[1]));	
+		canvas.drawcircle(Integer.parseInt(array[1]));	
 	}
 
 	@Override
