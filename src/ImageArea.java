@@ -10,6 +10,7 @@ import javax.swing.JPanel;
  *@author 33485434
  *
  */
+
 public class ImageArea  extends JPanel
 {
 	/**
@@ -44,6 +45,10 @@ public class ImageArea  extends JPanel
 	}
 	/**Rectangle
 	 * This method is the rectangle shape with int values for width and height  
+	 */
+	/**
+	 * @param width 
+	 * @param height
 	 */
 	public void rectangle(int width, int height) 
 	{
